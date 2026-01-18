@@ -2,7 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gianolia/public_html/web2/
-    - /bin/rsync -av --delete \
-        --exclude='.git' \
-        --exclude='.cpanel.yml' \
-        ./ $DEPLOYPATH
+    - /bin/rsync -av --delete --exclude='.git' --exclude='.cpanel.yml' ./ $DEPLOYPATH
