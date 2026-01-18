@@ -1,6 +1,6 @@
 <?php
 // Path to your repository
-$repo_path = '/home/your_user/public_html/your_project';
+$repo_path = 'C:\Users\board\OneDrive - Western Wisconsin Technical College\3 Spring 2026\2 Web Programming II\web2';
 // Pull latest changes
 exec("cd {$repo_path} && git pull origin main", $output);
 // Log output (optional)
