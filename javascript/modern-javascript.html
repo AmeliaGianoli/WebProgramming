@@ -41,8 +41,12 @@
                 const listItem=document.querySelectorAll(".fruits li");
                 console.log(listItem);
                 for(let i=0; i<listItem.length; i++){
-                    console.log(listItem[i].innerHTML);
+                    // console.log(listItem[i].innerHTML);
+                    listItem[i].innerHTML="Foo";
+                    listItem[i].style.backgroundColor="yellow";
                 };
+
+
 
             })
 
