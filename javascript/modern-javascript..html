@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Amelia Gianoli">
+        <title>Modern JavaScript</title>
+        <script>
+
+            window.addEventListener("load", () => {
+                
+                // moderj JS uses "arrow functions" written as follows:
+                    // const someFunction = () => {}
+                // rather than classic functions:
+                    // function someFunction (){}
+
+                const someFunction = () => {
+
+                }
+
+                const scores=[99, 92, 100];
+                for (let i=0; i<scores.length; i++){
+                    console.log(scores[i]);
+                }
+
+                scores.forEach((ce)=>{
+                    console.log(ce)
+                })
+
+                scores.push(66);
+                console.log(scores);
+
+                
+                const h2=document.querySelector("#header");
+                h2.innerHTML="Hello";
+
+                const fruitList=document.querySelector(".fruits");
+                console.log(fruitList.innerHTML);
+
+                const listItem=document.querySelectorAll(".fruits li");
+                console.log(listItem);
+                for(let i=0; i<listItem.length; i++){
+                    console.log(listItem[i].innerHTML);
+                };
+
+            })
+
+        </script>
+    </head>
+
+    <body>
+        <h2 id="header">This is an h2</h2>
+        <ul class="fruits">
+            <li>apples</li>
+            <li>oranges</li>
+            <li>bananas</li>
+        </ul>
+    </body>
+
+</html>
