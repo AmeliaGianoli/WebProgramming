@@ -18,7 +18,14 @@
 	<script type="text/javascript">
 	window.addEventListener("load", () => {
 		
-	})
+		const div=document.querySelector("#circleDiv");
+		window.addEventListener("mousemove", (evt)=>{
+			// console.log(evt.pageX, evt.pageY);
+
+			div.style.left=evt.pageX-25+"px";
+			div.style.top=evt.pageY-25+"px";
+		});
+	});
 	</script>
 </head>
 <body>

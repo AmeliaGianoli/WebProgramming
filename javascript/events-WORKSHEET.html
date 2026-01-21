@@ -28,7 +28,7 @@
 
 		// ANSWER
 		const txtFirstName = document.querySelector("[name='firstName']");
-		txtFirstName.addEventListener("input", ()=>{
+		txtFirstName.addEventListener("change", ()=>{
 			console.log(txtFirstName.value);
 		});
 
@@ -44,7 +44,10 @@
 		Add an event handler function that listens for a 'change' event on it
 		In the body of the event handler, simply console log the value of the text box
 		*/
-
+		const txtLastName=document.querySelector("[name=lastName]");
+		txtLastName.addEventListener("change", ()=>{
+			console.log(txtLastName.value);
+		});
 
 
 
