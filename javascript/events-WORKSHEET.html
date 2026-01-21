@@ -33,7 +33,7 @@
 		});
 
 		
-		// NOTE: Just for fun, see how the behavior changes if you use a 'change'
+		// note: Just for fun, see how the behavior changes if you use a 'change'
 		// event instead of an 'input' event
 
 
@@ -100,6 +100,11 @@
 		const radioHandler = (evt) => {
 			console.log(evt.target.value)
 		}
+
+		const radios=document.querySelectorAll("[name=iceCream]");
+		radios.forEach((radio)=>{
+			radio.addEventListener("change", radioHandler)
+		});
 
 
 
