@@ -1,45 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Review Problems for Intermediate Web Programming</title>
 
   <script>
-  window.addEventListener("load", function(){
+    window.addEventListener("load", function () {
 
-    /*
-    PROBLEM 1
-    Write a function named calculateTip that has two parameters.
-    The first parameter should be named billAmount (it should represent the amount of a dinner bill).
-    The second parameter should be named tipPercent (it should represent a percent for a tip).
-    The function should return the tip amount based on the parameters.
-    Make sure to try out the function by invoking it and then console logging the return value.
-    */
-
-
-    // PROBLEM 2
-    var testScores = [78, 85, 93, 98]
-    /*
-    Use a loop to figure out the average of all the scores in the testScores array
-    */
+      /*
+      PROBLEM 1
+      Write a function named calculateTip that has two parameters.
+      The first parameter should be named billAmount (it should represent the amount of a dinner bill).
+      The second parameter should be named tipPercent (it should represent a percent for a tip).
+      The function should return the tip amount based on the parameters.
+      Make sure to try out the function by invoking it and then console logging the return value.
+      */
+      const calculateTip = (billAmount, tipPercent) => {
+        return("$" + (billAmount * tipPercent));
+      }
 
 
-    /*
-    PROBLEM 3
-    Declare a variable named myTextFile and initialize it to an object that has the following
-    properties (keys) and values (note that the object represents a file on your computer):
 
-    PROPERTY (KEY)    VALUE
-    --------------------------------
-    name              hello-world.txt
-    location          C:\desktop
-    extension         txt
-    size              1000
-    */
+      // PROBLEM 2
+      let testScores = [78, 85, 93, 98]
+      /*
+      Use a loop to figure out the average of all the scores in the testScores array
+      */
 
+      let testTotal = 0;
 
+      testScores.forEach((ce) => {
+        testTotal += ce
+      });
+      const testAvg = testTotal / testScores.length;
+      console.log(testAvg);
+
+      /*
+      PROBLEM 3
+      Declare a variable named myTextFile and initialize it to an object that has the following
+      properties (keys) and values (note that the object represents a file on your computer):
+  
+      PROPERTY (KEY)    VALUE
+      --------------------------------
+      name              hello-world.txt
+      location          C:\desktop
+      extension         txt
+      size              1000
+      */
+      const myTextFile = {
+        name: "hello-world.txt",
+        location: "C:\\desktop",
+        extension: "txt",
+        size: 1000,
+      };
 
     /* 
     PROBLEM 4
@@ -54,17 +69,46 @@
     DogPic.jpg      C:\documents     jpg            10002
     MyReport.docx   C:\documents     docx           50004
     */
+    
+    //NOTE: check RE: indenting. feels off, but I can't quite figure out why with the problemms being written as comments
+    const computerFiles=[{
+        name: "MyResume.docx",
+        location: "C:\\documents",
+        extensaion: "docx",
+        size: 2501,
+      },{
+        name: "FamilyPic.jpg",
+        location: "C:\\desktop",
+        extensaion: "jpg",
+        size: 43000,
+      },{
+        name: "DogPic.jpg",
+        location: "C:\\documents",
+        extensaion: "jpg",
+        size: 10002,
+      },{
+        name: "MyReport.docx",
+        location: "C:\\documents",
+        extensaion: "docx",
+        size: 50004,
+      }
+    ]
 
-
+    // console.log(computerFiles[1].location.length)
 
     /*
     PROBLEM 5 (use the array that you created in the previous problem)
     Write code that figures out how many .docx files have a file size larger than 10000.
     To do this, loop through the array of 'file' objects
     */
+    let filesOver10k=0;
+    computerFiles.forEach((ce)=>{
+      if (ce.size >10000){
+        filesOver10k++;
+      }
+    })
 
 
-    
     //PROBLEM 6
 
     /*
@@ -80,14 +124,18 @@
     */
     const txtAmount = document.getElementById("txtAmount");
     const selTipPercent = document.getElementById("selTipPercent");
-    const btnCalculateTip = document.getElementById("btnCalculateTip");
+    const btnCalculateTip = document.getElementById("btnCalculateTip");    
     const dvResult = document.getElementById("dvResult");
-    console.log(txtAmount, selTipPercent, btnCalculateTip, dvResult);
+    // console.log(txtAmount, selTipPercent, btnCalculateTip, dvResult);
 
 
     // Step 2 - Add an event handler function for when btnCalculateTip is clicked
-
-
+    btnCalculateTip.addEventListener("click", ()=>{
+      // console.log(txtAmount.value)
+      // console.log(selTipPercent.value)
+      dvResult.innerHTML = calculateTip(txtAmount.value, selTipPercent.value/100);
+    });
+    
     /*
     Step 3 - In the body of of the event handler function, do the following
        - Get the value entered into txtAmount
@@ -119,48 +167,50 @@
   });
 
   </script>
-</head> 
-<body>
-    <main>
-      <h2>Things you learned about JavaScript in Web Programming</h2>
-      <ol>
-        <li>Variables</li>
-        <li>Data Types</li>
-        <li>IF Statements</li>
-        <li>Functions
-          <ol>
-            <li>Parameters</li>
-            <li>Return Values (and their data types)</li>
-          </ol>
-        </li>
-        <li>Objects
-          <ol>
-            <li>Properties</li>
-            <li>Methods</li>
-          </ol>
-        </li>
-        <li>Arrays</li>
-        <li>Loops</li>
-        <li>The DOM</li>
-        <li>Event Handling</li>
-      </ol>
-      <h2>Complete The Coding Problems in the SCRIPT Element of this Page</h2>
-      <h2>Tip Calculator</h2>
-      
-        <label>Bill Amount</label>
-        <input type="text" id="txtAmount">
-        <br>
-        <label>Tip Percent</label> 
-        <select id="selTipPercent">
-          <option>10</option>
-          <option>15</option>
-          <option>20</option>
-          <option>25</option>
-        </select>
-        <br>
-        <input type="button" id="btnCalculateTip" value="Calculate Tip">
-        <div id="dvResult"></div>
+</head>
 
-    </main>
-</body> 
+<body>
+  <main>
+    <h2>Things you learned about JavaScript in Web Programming</h2>
+    <ol>
+      <li>Variables</li>
+      <li>Data Types</li>
+      <li>IF Statements</li>
+      <li>Functions
+        <ol>
+          <li>Parameters</li>
+          <li>Return Values (and their data types)</li>
+        </ol>
+      </li>
+      <li>Objects
+        <ol>
+          <li>Properties</li>
+          <li>Methods</li>
+        </ol>
+      </li>
+      <li>Arrays</li>
+      <li>Loops</li>
+      <li>The DOM</li>
+      <li>Event Handling</li>
+    </ol>
+    <h2>Complete The Coding Problems in the SCRIPT Element of this Page</h2>
+    <h2>Tip Calculator</h2>
+
+    <label>Bill Amount</label>
+    <input type="text" id="txtAmount">
+    <br>
+    <label>Tip Percent</label>
+    <select id="selTipPercent">
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>25</option>
+    </select>
+    <br>
+    <input type="button" id="btnCalculateTip" value="Calculate Tip">
+    <div id="dvResult"></div>
+
+  </main>
+</body>
+
 </html>
