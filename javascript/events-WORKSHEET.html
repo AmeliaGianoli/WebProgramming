@@ -57,7 +57,10 @@
 		Add an event handler function that listens for a 'change' event on it
 		In the body of the event handler, simply console log the value of date input
 		*/
-
+		const valueDate=document.querySelector("[name=date]");
+		valueDate.addEventListener("change", ()=>{
+			console.log(valueDate.value)
+		})
 
 
 
@@ -67,7 +70,10 @@
 		Add and event handler function that listens for the 'change' event.
 		In the body of the event handler, simply console log the value of the select box
 		*/
-
+		const colorSelector=document.querySelector("[name=color]");
+		colorSelector.addEventListener("change", ()=>{
+			console.log(colorSelector.value);
+		})
 
 
 
@@ -83,7 +89,14 @@
 		HINT: To find out if the checkbox is checked, you can use it's 'checked' property.
 		This will be TRUE if the the checkbox is checked, and FALSE if it is not.  
 		*/
-
+		const checkBox=document.querySelector("[name=terms]");
+		checkBox.addEventListener("change", (evt)=>{
+			if(checkBox.checked){
+				console.log("Agrees to terms of service")
+			}else{
+				console.log("Does not agree to terms of service")
+			}
+		})
 
 
 
