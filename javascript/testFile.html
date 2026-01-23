@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function () {
+
+            const computerFiles = [{
+                name: "MyResume.docx",
+                location: "C:\\documents",
+                extensaion: "docx",
+                size: 2501,
+            }, {
+                name: "FamilyPic.jpg",
+                location: "C:\\desktop",
+                extensaion: "jpg",
+                size: 43000,
+            }, {
+                name: "DogPic.jpg",
+                location: "C:\\documents",
+                extensaion: "jpg",
+                size: 10002,
+            }, {
+                name: "MyReport.docx",
+                location: "C:\\documents",
+                extensaion: "docx",
+                size: 50004,
+            }
+            ]
+
+            computerFiles.forEach((ce) => {
+                for (let key in ce){
+                    console.log(key+" : "+ce[key])
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
