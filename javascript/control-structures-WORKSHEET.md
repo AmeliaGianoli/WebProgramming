@@ -51,7 +51,7 @@ The "( )" following each case is optional from what I can tell. The 'break' is r
 ```
 
 ## For/In Loop
-For...In is basically the same as object.forEach except it applies to arrays instead. It returns the key, not the value, so that needs to be used in some way (typically accessing the value using bracket notation).
+For...In is basically the same as object.forEach except it applies to objects instead of arrays. It returns the key, not the value, so that needs to be used in some way (typically accessing the value using bracket notation).
 Syntax:
 ```js
 for (let key in object){

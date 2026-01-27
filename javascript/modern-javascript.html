@@ -8,6 +8,8 @@
         <title>Modern JavaScript</title>
         <script>
 
+            // https://demirels-organization.gitbook.io/javascript-tutorial/implicit-return
+
             window.addEventListener("load", () => {
                 
                 // moderj JS uses "arrow functions" written as follows:
@@ -46,6 +48,33 @@
                     listItem[i].style.backgroundColor="yellow";
                 };
 
+                // Ternary operator
+                let youPass;
+                const yourScore=99;
+                if (yourScore>70){
+                    youPass=true;
+                }else{
+                    youPass=false;
+                };
+
+                youPass=yourScore>70 ? "yes":"no";
+                console.log(youPass);
+
+                // Abbreviating arrow functions
+
+                const someArray=["Bob", "Betty", "Sally"];
+                someArray.forEach((ce)=>{console.log(ce)});
+                
+                // If an arrow function has 1 and only 1 parameter, you can omit the parenthesis:
+                someArray.forEach(ce=>{console.log(ce)});
+
+                // if an arrow function has 1 and only 1 expression in the body, you can omit the vurly braces:
+                someArray.forEach(ce=>console.log(ce));
+
+                // const match=someArray.find((ce)=>{return ce==="Betty"});
+                
+                // If an arrow function has one statement in the body, you do not need to use 'return'
+                const match=someArray.find(ce=>ce==="Betty");
 
 
             })
