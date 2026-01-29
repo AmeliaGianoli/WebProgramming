@@ -104,31 +104,45 @@
 		console.log("PROBLEM 14");
 		// Use the findIndex() method to find the index of the (first and only) basketball player who is NOT in the hall of fame
 		// console log the return value
-
+		console.log(basketballPlayers.findIndex(ce=>ce.hallOfFamer===false));		
 
 		console.log("PROBLEM 15");
 		// Use the slice() method to get the first two elements in the weekDays array
 		// console log the return value
 		// AND console log the weekDays array
-
+		weekDays.slice();
 
 		console.log("PROBLEM 16");
 		// Use the splice() method to remove the first two elements in the flavors array
 		// console log the return value
 		// AND console log the flavors array
-
-
+		console.log(flavors.slice(0, 2));
+		console.log(flavors);         
 
 
 		console.log("BONUS PROBLEM");
 		// Write code that figures out which basketball player scored the most total points
 		// Then console log the name of the player
-
+		let topScorer="";
+		let topScore=0;
+		basketballPlayers.forEach(ce=> {
+			if (ce.totalPoints > topScore){
+				topScore=ce.totalPoints;
+				topScorer=ce.name;
+			}
+		});
+		console.log(topScorer);
 
 
 		console.log("BONUS PROBLEM");
 		// Write code that figures out how many basketball players are in the hall of fame
 		// then console log the result
+		let hallOfFamers=0;
+		basketballPlayers.forEach(ce=>{
+			if (ce.hallOfFamer==true){hallOfFamers+=1}
+		});
+		console.log(hallOfFamers);
+
 
 
 	})// end of window load handler		
