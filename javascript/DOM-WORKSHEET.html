@@ -65,15 +65,22 @@
 			// 		 	1. Create an LI element and set it's innerHTML property to the value of the textbox
 			//		 	2. Append the LI element to the people-list UL
 			//			3. Set the value of the text box to an empty string
-			btnAddPerson.addEventListener("click", () => {
-				let valueFirstName = document.querySelector("[name=firstName]").value;
-				if (valueFirstName != "") {
-					const boxName = document.createElement("li");
-					boxName.innerHTML = valueFirstName;
-					document.querySelector("#people-list").append(boxName);
-					document.querySelector("[name=firstName]").value = "";
+			
+			//NOTE: I changed this slightly to have the function that does the appending separate so I could call it on "Enter" as well as "click"
+			const PersonAdder= () => {
+					let valueFirstName = document.querySelector("[name=firstName]").value;
+					if (valueFirstName != "") {
+						const boxName = document.createElement("li");
+						boxName.innerHTML = valueFirstName;
+						document.querySelector("#people-list").append(boxName);
+						document.querySelector("[name=firstName]").value = "";
+					};
 				};
+			btnAddPerson.addEventListener("click", PersonAdder)
+			document.querySelector("[name=firstName]").addEventListener("keydown", (event)=>{
+				if (event.key=="Enter"){PersonAdder()};
 			});
+
 
 
 			console.log("PROBLEM 5");
