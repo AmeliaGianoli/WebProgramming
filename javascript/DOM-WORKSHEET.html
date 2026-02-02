@@ -65,20 +65,20 @@
 			// 		 	1. Create an LI element and set it's innerHTML property to the value of the textbox
 			//		 	2. Append the LI element to the people-list UL
 			//			3. Set the value of the text box to an empty string
-			
+
 			//NOTE: I changed this slightly to have the function that does the appending separate so I could call it on "Enter" as well as "click"
-			const PersonAdder= () => {
-					let valueFirstName = document.querySelector("[name=firstName]").value;
-					if (valueFirstName != "") {
-						const boxName = document.createElement("li");
-						boxName.innerHTML = valueFirstName;
-						document.querySelector("#people-list").append(boxName);
-						document.querySelector("[name=firstName]").value = "";
-					};
+			const PersonAdder = () => {
+				let valueFirstName = document.querySelector("[name=firstName]").value;
+				if (valueFirstName != "") {
+					const boxName = document.createElement("li");
+					boxName.innerHTML = valueFirstName;
+					document.querySelector("#people-list").append(boxName);
+					document.querySelector("[name=firstName]").value = "";
 				};
+			};
 			btnAddPerson.addEventListener("click", PersonAdder)
-			document.querySelector("[name=firstName]").addEventListener("keydown", (event)=>{
-				if (event.key=="Enter"){PersonAdder()};
+			document.querySelector("[name=firstName]").addEventListener("keydown", (event) => {
+				if (event.key == "Enter") { PersonAdder() };
 			});
 
 
@@ -90,11 +90,11 @@
 			//		<li>Strawberries</li><li>Apples</li><li>Oranges</li>
 			// Then 'get a handle' on the fruit-list UL (in the BODY)
 			// and set its innerHTML property to the string you created
-			
-			const liFruits=fruits.map(ce=>"<li>"+ce+"</li>");
-			const strFruits=liFruits.join("");
-			const ulFruit=document.querySelector(".fruit-list");
-			ulFruit.innerHTML=strFruits;
+
+			const liFruits = fruits.map(ce => "<li>" + ce + "</li>");
+			const strFruits = liFruits.join("");
+			const ulFruit = document.querySelector(".fruit-list");
+			ulFruit.innerHTML = strFruits;
 
 			// NOTE: I did the exercise as instructed, but I would prefer to have it as:
 			// 		const strFruits=fruits.map(ce=>"<li>"+ce+"</li>").join("");
@@ -110,7 +110,7 @@
 			//		list-style: none
 			//		padding: 10px
 
-			//NOTE: The following code works, but for extra credit, I want to try it a little differenty...
+			//NOTE: The following code works and is the more beginner version, but for extra credit, I want to try it a little differenty...
 			// const styleFruit=ulFruit.style;
 			// styleFruit.backgroundColor="darkgrey";
 			// styleFruit.border="2px solid black";
@@ -119,7 +119,7 @@
 			// styleFruit.listStyle="none";
 			// styleFruit.padding="10px";
 
-			const fruitStyle={
+			const fruitStyle = {
 				backgroundColor: "darkgray",
 				border: "2px solid black",
 				borderRadius: "4px",
@@ -127,8 +127,8 @@
 				listStyle: "none",
 				padding: "10px",
 			}
-			for (let key in fruitStyle){
-				ulFruit.style[key]=fruitStyle[key];
+			for (let key in fruitStyle) {
+				ulFruit.style[key] = fruitStyle[key];
 			}
 
 

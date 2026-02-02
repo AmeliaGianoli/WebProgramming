@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Strings</title>
+	<script>
+	window.addEventListener("load", ()=>{
+
+
+		// Strings are objects that have properties and methods (length, toUpperCase())
+		// In this activity we are going to explore the string 'API', which is a fancy
+		// way of saying that we're going to explore the properties and methods that
+		// allow us to 'interface' with a string object.
+
+		// let's interface with this string by checking it's length property
+		// and calling its toUpperCase() method:
+		const someString = "https://www.acme.com/products/some-product-page.html";
+
+
+		// Before moving on, let's talk about 'escape characters':
+
+
+		// Strings are a type of array
+
+
+		// You can loop through each character in a string:
+
+
+		// But strings do not have a forEach() method
+		//someString.forEach(c => console.log(c)); // This will crash!
+
+
+		// The indexOf() method
+
+
+
+		// trim()
+		const str = " \n xxx  \t  ";
+
+
+
+		// replace();
+		const str2 = "It's raining cats and dogs";
+
+
+		// You can do a 'global' replace
+		const str3 = "I like to eat, eat, eat!";
+
+
+
+		// split()
+		const someDate = "2/22/2024";
+
+
+
+		// getting a rough word count
+		const someStory = "A long time ago, in a galaxy far, far away...";
+
+
+
+
+		// OPTIONAL STUFF
+		// slice(), substr(), substring()
+
+
+		// The split() method comes in handy when parsing CSV data:
+		const csvData = `ID, NAME, AGE, BREED
+						 1, Buster, 7, Boxer
+						 2, Lucy, 4, Black Lab`;
+
+		// Paste the value of the csvData variable into a file named dogs.csv
+		// And then open it in Xcel
+
+
+
+	});
+	</script>
+</head>
+<body>
+	<h1>The String API</h1>
+</body>
+</html>
