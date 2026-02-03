@@ -1,82 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Strings</title>
-	<script>
-	window.addEventListener("load", ()=>{
+  <meta charset="utf-8">
+  <title>Strings</title>
+  <script>
+    window.addEventListener("load", () => {
 
 
-		// Strings are objects that have properties and methods (length, toUpperCase())
-		// In this activity we are going to explore the string 'API', which is a fancy
-		// way of saying that we're going to explore the properties and methods that
-		// allow us to 'interface' with a string object.
+      // Strings are objects that have properties and methods (length, toUpperCase())
+      // In this activity we are going to explore the string 'API' (Application Programming Interface), which is a fancy
+      // way of saying that we're going to explore the properties and methods that
+      // allow us to 'interface' with a string object.
 
-		// let's interface with this string by checking it's length property
-		// and calling its toUpperCase() method:
-		const someString = "https://www.acme.com/products/some-product-page.html";
+      // let's interface with this string by checking it's length property
+      // and calling its toUpperCase() method:
+      const someString = "https://www.acme.com/products/some-product-page.html";
+      console.log(someString.length);
+      console.log(someString.toUpperCase());
 
+      // Before moving on, let's talk about 'escape characters':
+      // alert("Hello \n \tWorld")
 
-		// Before moving on, let's talk about 'escape characters':
+      // Strings are a type of array
+      console.log(someString[0]);
 
+      // You can loop through each character in a string:
+      for (let x = 0; x < someString.length; x++) {
+        console.log(someString[x]);
+      }
 
-		// Strings are a type of array
-
-
-		// You can loop through each character in a string:
-
-
-		// But strings do not have a forEach() method
-		//someString.forEach(c => console.log(c)); // This will crash!
-
-
-		// The indexOf() method
-
-
-
-		// trim()
-		const str = " \n xxx  \t  ";
+      // But strings do not have a forEach() method
+      //someString.forEach(c => console.log(c)); // This will crash!
 
 
-
-		// replace();
-		const str2 = "It's raining cats and dogs";
-
-
-		// You can do a 'global' replace
-		const str3 = "I like to eat, eat, eat!";
+      // The indexOf() method
+      console.log(someString.indexOf("www"))
+      console.log(someString.indexOf("xxx"))
 
 
-
-		// split()
-		const someDate = "2/22/2024";
+      // trim()
+      const str = " \n xxx  \t  ";
+      // console.log(str);
+      const newStr=str.trim();
+      console.log(newStr);
 
 
 
-		// getting a rough word count
-		const someStory = "A long time ago, in a galaxy far, far away...";
+      // replace();
+      const str2 = "It's raining cats and dogs";
+      console.log(str2.replace("cats","guinea pigs"));
+      // only replaces first instance of the trigger
+
+
+      // You can do a 'global' replace
+      const str3 = "I like to eat, eat, eat!";
+      const str4=str3.replace(/eat/g, "sleep")
+      console.log(str4);
 
 
 
+      // split()
+      const someDate = "2/22/2024";
+      const dateParts=someDate.split("/")
+      console.log(dateParts);
 
-		// OPTIONAL STUFF
-		// slice(), substr(), substring()
+      // join
+      console.log(dateParts.join("-"));
+
+      // getting a rough word count
+      const someStory = "A long time ago, in a galaxy far, far away...";
+      const words=someStory.split(" ");
+      console.log(words.length);
 
 
-		// The split() method comes in handy when parsing CSV data:
-		const csvData = `ID, NAME, AGE, BREED
+      // OPTIONAL STUFF
+      // slice(), substr(), substring()
+
+      // slice: does not include end index
+      // slice(start, end)
+      console.log(someString.slice(0,5));
+
+      // substr
+      // legacy method, replaced by substring() or slice()
+
+      // substring(start, end)
+      // only works on strings
+      console.log(someString.substring(0, 5));
+      console.log(someString);
+
+
+
+      // The split() method comes in handy when parsing CSV data:
+      const csvData = `ID, NAME, AGE, BREED
 						 1, Buster, 7, Boxer
 						 2, Lucy, 4, Black Lab`;
 
-		// Paste the value of the csvData variable into a file named dogs.csv
-		// And then open it in Xcel
+      // Paste the value of the csvData variable into a file named dogs.csv
+      // And then open it in Xcel
 
+      const rows=csvData.split("\n");
+      console.log(rows);
 
+      const dogs=[];
 
-	});
-	</script>
+      for(let x=1; x<rows.length; x++){
+        const cells=rows[x].split(",");
+        const dogObj={
+          id: cells[0].trim(),
+          name: cells[1].trim(),
+          age: cells[2].trim(),
+          breed: cells[3].trim()
+        }
+        dogs.push(dogObj);
+      };
+      console.log(dogs);
+
+    });
+  </script>
 </head>
+
 <body>
-	<h1>The String API</h1>
+  <h1>The String API</h1>
 </body>
+
 </html>
