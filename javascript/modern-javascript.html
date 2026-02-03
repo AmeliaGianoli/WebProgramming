@@ -94,6 +94,32 @@
                 console.log("You pass")
             }
 
+
+            // Method chaining
+            document.getElementById("header").addEventListener("click", () => {
+                alert("Hello!")
+            })
+
+            const testScores = [77, 99, 65];
+            const passingScores = testScores.filter(score => score >= 70);
+            console.log(passingScores);
+            const sum=passingScores.reduce((sum, ps)=>sum+ps);
+            console.log(sum);
+
+            console.log(testScores.filter(s=>s>=70).reduce((sum, ps)=>sum+ps));
+
+            // or in expanded form:
+            console.log(testScores.filter((s)=>{return s>=70}).reduce((sum, ps)=>{return sum+ps}, 0));
+
+            // Template Syntax
+
+            const someVar="Spam";
+            const longStr = `
+                kdfjslkdjfdfsd  fsdf
+                sdf sdfs${someVar}  sdfsfsdf fdsdffffffffff dsffffff
+                ffffff dsfffffffffffff`.trim();
+            console.log(longStr);
+
         })
 
     </script>
