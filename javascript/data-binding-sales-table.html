@@ -61,7 +61,13 @@
 				sales.forEach(s=>{
 					html+=`<tr>
 									<td>${s.customer}</td>
+									<td>${s.product}</td>
+									<td>${s.price}</td>
+									<td>${s.date}</td>
+									
 								</tr> `
+
+
 				});
 
 				html+=`</table>`
@@ -70,7 +76,7 @@
 		}
 
 		const table2 = createSalesTableV2(salesData);
-		console.log(table2.constructor.name, table2); // note that the return type is a string
+		// console.log(table2.constructor.name, table2); // note that the return type is a string
 		document.querySelector("#table2-container").innerHTML += table2;
 
 

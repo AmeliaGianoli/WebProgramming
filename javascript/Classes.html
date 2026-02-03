@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes</title>
+  <script type="text/javascript">
+    window.addEventListener("load", () => {
+
+      class Dog{
+        // properties:
+        name;
+        breed;
+        vaccinated=false;
+        age=0
+
+        // Constructor function:
+        constructor(name, breed, vaccinated, age){
+          this.name=name;
+          this.breed=breed;
+          this.vaccinated=vaccinated;
+          this.age=age;
+        }
+
+        // Methods:
+        eat(food){
+          console.log(this.name+" is eating "+food);
+        }
+      }
+
+      const dog1=new Dog();
+      console.log(dog1);
+      const dog2=new Dog("Bruno", "poodle", true, 7);
+      console.log(dog2);
+      dog2.eat("a biscuit");
+
+      dogs=[
+        new Dog("Bruno", "Poodle", true, 7),
+        new Dog("Snoopy", "Beagle", false, 2),
+        new Dog("Lassie", "Collie", true, 4),
+        new Dog("Fido", "Boxer", true, 11),
+        new Dog("Coco", "Pit Bull", true, 5),
+      ]
+
+      dogs.forEach(d=>d.eat("a biscuit"));
+
+    })
+  </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
