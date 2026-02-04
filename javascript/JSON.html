@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <script>
+    window.addEventListener("load", ()=>{
+
+      const dogs=[
+        {id:1, name:"Bruno", age:7, vaccinated:true},
+        {id:2, name:"Snoopy", age:3, vaccinated:true},
+        {id:3, name:"Lassie", age:12, vaccinated:false}
+      ]
+
+      const dogsJSON=JSON.stringify(dogs);
+      console.log(dogsJSON);
+      console.log(typeof dogsJSON);
+
+      const dogArray= JSON.parse(dogsJSON);
+      dogArray.forEach(d =>console.log(d.name));
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
