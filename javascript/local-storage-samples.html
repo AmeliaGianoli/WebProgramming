@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+
+  <script>
+    console.log(localStorage);
+
+    localStorage.setItem("FirstName", "Amelia");
+
+    // alert(localStorage.getItem("FirstName"));
+
+    const dogs=[
+      {name:"Bruno"},
+      {name:"Lassie"}
+    ];
+
+    const dogStr=JSON.stringify(dogs);
+    localStorage.setItem("dogs", dogStr);
+    // localStorage.clear();
+
+    
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
