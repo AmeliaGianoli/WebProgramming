@@ -25,5 +25,4 @@ jobs:
               ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
             cd ~/public_html/web2
             git pull origin main
-            --exclude ".git/*" --exclude ".github/*" --exclude "node_modules/*" --exclude "package*.json" --exclude "test.js" --exclude "github-actions-cpanel.*"
           EOF
