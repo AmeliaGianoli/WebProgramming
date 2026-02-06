@@ -23,7 +23,7 @@ jobs:
           ssh -p ${{ secrets.CPANEL_PORT }} \
               -o StrictHostKeyChecking=no \
               ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
-            cd ~/c/Users/w2633937/'OneDrive - Western Wisconsin Technical College'/'3 Spring 2026'/'2 Web Programming II'/web2
+            cd ~/public_html/web2
             git pull origin main
             npm install --production || true
             npm run build || true
