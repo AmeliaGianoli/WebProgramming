@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Component Based Design with Functions</title>
+	<script type="text/javascript">
+		
+    const createLabelCheckBox = (el, labelText, chkValue)=>{
+      // Create the UI elements
+      const label = document.createElement("label");
+      const checkBox = document.createElement("input");
+      checkBox.setAttribute("type", "checkbox");
+      const div=document.createElement("div");
+      div.append(checkBox, label);
+      el.append(div);
+      // bind the data
+      label.innerHTML=labelText;
+      checkBox.value=chkValue;
+    }
+
+    window.addEventListener("load", ()=>{
+      // test component
+      const testContainer=document.querySelector("#test-container");
+      // DEPENDS ON (requires) 3 things:
+      // -Container to attach itslef to on the page
+      // -Text (data) to display in the label
+      // -Value (data) to bind to the checkbox
+      createLabelCheckBox(testContainer, "Check if you like veggies", "yes");
+
+      // components should be able to notify the system when needed:
+      // listen for checking or unchecking of the liking veggies checkbox
+      testContainer.addEventListener("change", evt=>{
+        alert(evt.target.value+" = "+evt.target.checked);
+      });
+
+      // Reuse the Component
+      // The problem is to figure out which veggies a user likes
+
+      // This will be the data that we use to generate instances of
+      // our component and keep track of the user preferences
+      const veggies=[
+        {id:1, name:"Broccoli", liked:null},
+        {id:2, name:"Carrots", liked:null},
+        {id:3, name:"Peas", liked:null}
+      ]
+
+      const veggieContainer=document.querySelector("#veggie-container");
+      veggies.forEach(veggieObj => createLabelCheckBox(veggieContainer, veggieObj.name, veggieObj.id));
+
+
+      // Listen for change events:
+      veggieContainer.addEventListener("change", evt=>{
+        const veggieId= evt.target.value;
+        const vegObj = veggies.find(v=>v.id==veggieId);
+        // Bind the data based on the state of the checkbox
+        // (update the variable [veggies.liked] with the 'checked' state)
+        vegObj.liked=evt.target.checked;
+        if (vegObj.liked){
+          alert("Glad you like "+vegObj.name);
+        }else{
+          alert("Sorry you don't like "+vegObj.name);
+        }
+        
+        console.log("Here is the current state of your veggie data: ", veggies);
+
+        // NOTE: left off with "Component Based Design and JavaScript Frameworks"
+      });
+
+    });
+
+	</script>
+</head>
+<body>
+	<div id="test-container"></div>
+	<br><br>
+	<h3>Which veggies do you like?</h3>
+	<div id="veggie-container"></div>
+</body>
+</html>
