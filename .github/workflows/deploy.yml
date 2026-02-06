@@ -1,0 +1,31 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.CPANEL_SSH_KEY }}
+
+      - name: Deploy
+        run: |
+          ssh -p ${{ secrets.CPANEL_PORT }} \
+              -o StrictHostKeyChecking=no \
+              ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
+            cd ~/c/Users/w2633937/'OneDrive - Western Wisconsin Technical College'/'3 Spring 2026'/'2 Web Programming II'/web2
+            git pull origin main
+            npm install --production || true
+            npm run build || true
+            rsync -av --delete dist/ ~/public_html/
+          EOF

@@ -12,25 +12,56 @@ Everyone benefits in some way. Obviously those with a physical disability (such 
 
 **3. Think about a website you use regularly.** Can you identify any features that might help someone with a disability use it? (Examples: buttons, navigation, text size, etc.)
 
-
+Skyward is the website that the school district uses and it is one of the most terrible user experiences I have ever had. It is difficult to navigate, once you log in it opens in a new bare-bones window, the mobile version doesn't scroll correctly, and that is just the tip of the iceburg. To improve it, I would fix the media query and make it more mobile-friendly. Simply adjusting the font size and layout would make it easier to read/navigate. The forms are very basic (like, Web I basic) so putting a little bit of effort into styling them would make it a more positive experience. Adding in buttons instead of links to things would make it easier to navigate as well. 
 
 **4. What types of disabilities might affect how someone uses the web?** Try to list at least 5 different categories.
+
+Physical:
+Physical conditions may limit the way one can actually interact with the computer screen or device that they use to navigate the webpage. Being able to navigate using only a keyboard and not relying on a mouse could help someone that has a condition such as tremors or anything that affects fine motor control. Being able to navigate with buttons instead of links would allow you to adjust the size of buttons to be easier to click. 
+
+Sensory:
+limitations such as vision or hearing loss would greatly affect how one interacted with a webpage. Needing to use a screenreader would put you at the mercy of whoever designed the page, and you would just have to hope that they tagged everything appropriately and used alternative text, etc. Hearing would probably be less impactful, but making sure any audio/video is properly captioned would negate most of this.
+
+Intellectual/Developmental:
+Having an overstimulating page, or a page that is too 'busy' could prove to be a barrier to someone with ASD or another developmental challenge. Having things very clearly labeled and having a well-designed site map could aid in navigating your page.
+
+Mental/Behavioral:
+Much like the Intellectual/developmental category, designing a page that is more streamlined and free from extra distractions can aid those that struggle with mental or behavioral challenges. A consistent layout, and logical structure will go a long way towards a positive user experience. 
+
+Learning/Neurological:
+Individuals with these challenges often require simple, consistent, and predictable design. SO all the same strategies for the previous two categories also apply here. Additionaly being mindful of font choice (maybe provide the user with a way to adjust font settings?) and size is important. 
 
 ## Part 2: Exploring Barriers
 
 **5. Close your eyes and try to navigate a familiar website using only your keyboard** (no mouse). What was difficult? What was impossible?
 
+It was impossible. Regardless of how much I use blackboaard on a regular basis, I am not equiped to navigate it without sight or a mouse. 
+
+
 **6. Turn off the sound on your device and watch a video.** What information did you miss? How did this change your experience?
+
+I watched the first 30 seconds of the Strings API video and it was a challenge. Even with CC on, the nuances and tone were completely missing. It was all one run-on sentence, so I had to guess at where the breaks and pauses were to make it more understandable. Even knowing the content, I was still confused and overwhelmed trying to process what I was reading (and having to read while seeing what was being displayed in the video).
 
 **7. What barriers might prevent someone from accessing web content?** Think beyond just the disability itself—consider technology, design choices, and other factors.
 
+Going back to my Skyward example, the layout and design of it makes it so I do not use the page. There are things that I could take care of myslef that I will instead call the school to take care of, or go in and talk to someone. 
+Technology can be a barrier. If I did not have access to a computer and was relying solely on mobile devices, I  would avoid a lot of sites (such as blackboard). Conversely, if I only had computer access, I wouldn't use tools like Google nearly as often. When it comes to quickly looking something up, I almost always reach for my phone, even if I have my computer up and running. Large/inefficient websites may take too long to load based on internet connection and processing power of the device accessing it. 
+
 **8. Have you ever encountered a website that was difficult to use?** What made it frustrating? Could those issues also affect people with disabilities?
+
+Almost every website I have interacted with has some drawback that detracts from a positive user experience. Usually it is a navigation issue (site maps are not as ommon as they used to be) or layout/style issue. The thing is, besides the undiagnosed ADHD, I am a fairly neurotypical person with no physical limitations. If these small things are leading to a negative user experience for me, I can almost guarantee that someone with more challenges is struggling even more.
 
 ## Part 3: Legal and Ethical Dimensions
 
 **9. Do you think website owners have a legal obligation to make their sites accessible?** Why or why not?
 
+Do they have a legal obligation? My understanding of ADA law would say yes they do. Should they have a legal obligation though? Maybe not. That will be discussed more in the next question....
+
 **10. Should all websites be required to be accessible, or only certain types?** Explain your reasoning.
+
+I think all public access websites should be required to be as accessible as possible. Quite frequently,
+
+// FIXME: finish this question!!!!!!
 
 **11. What might be the consequences** (legal, financial, social) **for organizations that don't prioritize web accessibility?**
 
