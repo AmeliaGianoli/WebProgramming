@@ -25,7 +25,5 @@ jobs:
               ${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }} << 'EOF'
             cd ~/public_html/web2
             git pull origin main
-            npm install --production || true
-            npm run build || true
-            rsync -av --delete dist/ ~/public_html/
+            
           EOF
