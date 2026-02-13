@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="version" content="2025">
+	<title>Web 2 Quiz</title>
+	<script type="text/javascript">
+	
+	window.addEventListener("load", () => {
+
+
+		console.log("PROBLEM 1"); // 2pts
+		// console log your name below this comment
+		console.log("Amelia Gianoli");
+
+		// You'll use this array to solve the following problems
+		const people = [
+			{name:"Bob Smith", age:53},
+			{name:"Jesse Vue", age:27},
+			{name:"Pedro Gomez", age:60},
+			{name:"Jen Salizar", age:42},
+			{name:"Buster Mella", age:51}
+		];
+
+
+
+		console.log("PROBLEM 2"); // 4pts
+		// Use the forEach() method to loop through each element
+		// in the people array, and console log the 'name' property of 
+		// each element
+			people.forEach(n=>console.log(n.name));
+
+
+
+		console.log("PROBLEM 3"); // 4pts
+		// Use the filter() method on the people array 
+		// to get the elements who's age is greater than 50.
+		// Console log the value that is returned by the filter method.
+			console.log(people.filter(p=>p.age>50));
+
+
+
+		console.log("PROBLEM 4"); // 4pts
+		/*
+		Use the map() method on the people array to generate an array
+		of strings that looks like this:
+			[
+				'<li>Bob Smith</li>', 
+				'<li>Jesse Vue</li>', 
+				'<li>Pedro Gomez</li>', 
+				'<li>Jen Salizar</li>', 
+				'<li>Buster Mella</li>'
+			]
+
+		Store the value that is returned by the map() method
+		in a variable named listItems.
+
+		Console log the listItems variable
+		*/
+
+			const listItems=people.map(p=>`<li>${p.name}</li>`);
+			console.log(listItems);
+
+
+
+		console.log("PROBLEM 5"); // 4pts
+		// Get a handle on the OL element below (in the BODY)
+		// and then set it's innerHTML property by joining
+		// the elements from the listItems array
+			const pplList=document.querySelector("[name=peopleList]");
+			pplList.innerHTML=listItems.join("");
+
+
+
+	});
+
+	</script>
+</head>
+<body>
+	<h3>People</h3>
+	<ol name="peopleList"></ol>
+</body>
+</html>
